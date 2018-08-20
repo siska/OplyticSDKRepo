@@ -51,7 +51,8 @@ In your Apple iTunes developer account, under App IDs, select your application a
 
 In XCode, select the project target, then click on the “Capabilities” tab. Scroll down to the “Associated Domains” option. Click on the button to turn it On, and then click on the “+” button to add the following item:
 
-```applinks:yourapp.oplct.com
+```
+applinks:yourapp.oplct.com
 ```
 
 Make sure you specify the App-Name you provided to Oplytic instead of “yourapp” above.
@@ -72,7 +73,8 @@ Embedded Binaries section. Choose OplyticSDKRepo.framework, which will also add 
 
 Be sure to include Oplytic in any files that use the library:
 
-```Import Oplytic
+```
+Import Oplytic
 ```
 
 ### 1) Start the Oplytic SDK
@@ -81,7 +83,8 @@ Initialize the Oplytic SDK in your app delegate class. When the app is launched,
 
 Add the following boilerplate code to your AppDelegate class:
 
-```func application(_ application: UIApplication, continue userActivity: NSUserActivity,
+```
+func application(_ application: UIApplication, continue userActivity: NSUserActivity,
 restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
     Oplytic.handleUniversalLink(userActivity: userActivity)
     return true
@@ -100,7 +103,8 @@ The Oplytic SDK also tracks app installs and attribution events automatically. E
 
 AddEvent is a general-purpose method:
 
-```public func addEvent(eventAction: String? = nil, eventObject: String? = nil, eventId: String? = nil, str1: String? = nil, str2: String? = nil, str3: String? = nil, num1: Double? = nil, num2: Double? = nil)
+```
+public func addEvent(eventAction: String? = nil, eventObject: String? = nil, eventId: String? = nil, str1: String? = nil, str2: String? = nil, str3: String? = nil, num1: Double? = nil, num2: Double? = nil)
 ```
 
 1) eventAction: a string associated with the event action, for example, “view” or “shop.”
@@ -114,7 +118,8 @@ to pass any sort of associated data for that event.
 
 AddPurchaseEvent is used specifically to track in-app purchases:
 
-```public func addPurchaseEvent(item: String, itemId: String, quantity: Double, price: Double, currency_unit: String)
+```
+public func addPurchaseEvent(item: String, itemId: String, quantity: Double, price: Double, currency_unit: String)
 ```
 
 1) item: Name of item being purchased.
@@ -127,7 +132,8 @@ AddPurchaseEvent is used specifically to track in-app purchases:
 
 If your app needs to know about the attributed click, assign an OplyticAttributionHandler protocol, like the simple ViewController example does below:
 
-```class ViewController: UIViewController, OplyticAttributionHandler {
+```
+class ViewController: UIViewController, OplyticAttributionHandler {
 
     override func viewDidLoad() {
         Oplytic.OplyticAttributionHandler = self
