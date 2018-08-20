@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		05D3C2E32DADCA5507FFF26A32582E92 /* Pods-OplyticSDKRepo_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EFC031F3EBFD4B2C54AB07A0A7610D /* Pods-OplyticSDKRepo_Tests-dummy.m */; };
 		1233A8ED2CA9FB5F8B30AB53F7CD40D9 /* OplyticSDKRepo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 300565F1FE2CD25A7614DE577DB979AA /* OplyticSDKRepo-dummy.m */; };
+		128A7547212B4EF1007DE4AA /* Oplytic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A7546212B4EF1007DE4AA /* Oplytic.swift */; };
+		128A7549212B4F19007DE4AA /* OPLDBCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A7548212B4F19007DE4AA /* OPLDBCache.swift */; };
 		59F2AB1C4B5E6B659D0E4EA8EF7C1FE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		6F05DD4C173F6C210E5C73C6AF98D2F1 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CDAB1EF17929299F906EA1C111142E /* ReplaceMe.swift */; };
 		9362AFE10E99E088F60D6FEA9E2BEB5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		E2CE8E72CF52CDAE6B6A5E536FBC8943 /* Pods-OplyticSDKRepo_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16EA13AC7A83B665F9219E0C79917CBB /* Pods-OplyticSDKRepo_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E34CC8F1BDB73C4B1CB02A43A9B9F908 /* OplyticSDKRepo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A0763DC79BA7F6C8395D5D45CB3D37 /* OplyticSDKRepo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,22 +29,26 @@
 
 /* Begin PBXFileReference section */
 		04D896BACF5EB762887F132901A04F58 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CC6111D85C0B685B992C608AA0B2896 /* OplyticSDKRepo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OplyticSDKRepo.framework; path = OplyticSDKRepo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CC6111D85C0B685B992C608AA0B2896 /* OplyticSDKRepo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OplyticSDKRepo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		128A7542212B4E0E007DE4AA /* Oplytic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Oplytic.h; path = OplyticSDKRepo/Classes/Oplytic.h; sourceTree = "<group>"; };
+		128A7546212B4EF1007DE4AA /* Oplytic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Oplytic.swift; path = OplyticSDKRepo/Classes/Oplytic.swift; sourceTree = "<group>"; };
+		128A7548212B4F19007DE4AA /* OPLDBCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OPLDBCache.swift; path = OplyticSDKRepo/Classes/OPLDBCache.swift; sourceTree = "<group>"; };
+		128A754A212B4F58007DE4AA /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = OplyticSDKRepo/Classes/sqlite3.h; sourceTree = "<group>"; };
+		128A754D212B504B007DE4AA /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = OplyticSDKRepo/Classes/module.modulemap; sourceTree = "<group>"; };
 		16EA13AC7A83B665F9219E0C79917CBB /* Pods-OplyticSDKRepo_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OplyticSDKRepo_Tests-umbrella.h"; sourceTree = "<group>"; };
 		19EAA33CAFF5957DA0555EEEF4D18C41 /* Pods-OplyticSDKRepo_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OplyticSDKRepo_Tests-resources.sh"; sourceTree = "<group>"; };
-		221FFF508E1D592257CFB7C57C27A1F5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		221FFF508E1D592257CFB7C57C27A1F5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2D6065F8FA79DED0310EA624B52F5EB1 /* OplyticSDKRepo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OplyticSDKRepo.xcconfig; sourceTree = "<group>"; };
 		300565F1FE2CD25A7614DE577DB979AA /* OplyticSDKRepo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OplyticSDKRepo-dummy.m"; sourceTree = "<group>"; };
-		37CDAB1EF17929299F906EA1C111142E /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = OplyticSDKRepo/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		381CFCA6DCBCE9F6F0A2EEC5570B2FC0 /* Pods-OplyticSDKRepo_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OplyticSDKRepo_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		4149BECDE2F9BDA7B5565C7D3C444236 /* OplyticSDKRepo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OplyticSDKRepo.modulemap; sourceTree = "<group>"; };
-		5E1593A0C99D17C410B63EB43A99E0C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		5E1593A0C99D17C410B63EB43A99E0C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63A0763DC79BA7F6C8395D5D45CB3D37 /* OplyticSDKRepo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OplyticSDKRepo-umbrella.h"; sourceTree = "<group>"; };
-		656B2AA2FBC3C5466B8312BF9819B32F /* OplyticSDKRepo.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = OplyticSDKRepo.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		656B2AA2FBC3C5466B8312BF9819B32F /* OplyticSDKRepo.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = OplyticSDKRepo.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		92343526B9A287DAF3BC973F1F92F4DA /* Pods-OplyticSDKRepo_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OplyticSDKRepo_Tests.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9B8228870813DEE435589703B0BAC148 /* Pods_OplyticSDKRepo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OplyticSDKRepo_Tests.framework; path = "Pods-OplyticSDKRepo_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B8228870813DEE435589703B0BAC148 /* Pods_OplyticSDKRepo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OplyticSDKRepo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EFC031F3EBFD4B2C54AB07A0A7610D /* Pods-OplyticSDKRepo_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OplyticSDKRepo_Tests-dummy.m"; sourceTree = "<group>"; };
 		BFCBE58B051057D420F2E8E69C762173 /* Pods-OplyticSDKRepo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OplyticSDKRepo_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C23B813392D52F07CC357F3CA2D2D115 /* Pods-OplyticSDKRepo_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OplyticSDKRepo_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,9 +95,13 @@
 		1CA8B81331D8222F7972EE4B7313DBCD /* OplyticSDKRepo */ = {
 			isa = PBXGroup;
 			children = (
-				37CDAB1EF17929299F906EA1C111142E /* ReplaceMe.swift */,
 				3BB9A9004B0F1140286C3DBC989916E6 /* Pod */,
 				138F37259AB5820487CE7E89C8D59EFF /* Support Files */,
+				128A7542212B4E0E007DE4AA /* Oplytic.h */,
+				128A754A212B4F58007DE4AA /* sqlite3.h */,
+				128A754D212B504B007DE4AA /* module.modulemap */,
+				128A7546212B4EF1007DE4AA /* Oplytic.swift */,
+				128A7548212B4F19007DE4AA /* OPLDBCache.swift */,
 			);
 			name = OplyticSDKRepo;
 			path = ../..;
@@ -275,8 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128A7549212B4F19007DE4AA /* OPLDBCache.swift in Sources */,
 				1233A8ED2CA9FB5F8B30AB53F7CD40D9 /* OplyticSDKRepo-dummy.m in Sources */,
-				6F05DD4C173F6C210E5C73C6AF98D2F1 /* ReplaceMe.swift in Sources */,
+				128A7547212B4EF1007DE4AA /* Oplytic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +318,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-OplyticSDKRepo_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-OplyticSDKRepo_Tests/Pods-OplyticSDKRepo_Tests.modulemap";
@@ -343,7 +353,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/OplyticSDKRepo/OplyticSDKRepo-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/OplyticSDKRepo/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/OplyticSDKRepo/OplyticSDKRepo.modulemap";
 				PRODUCT_MODULE_NAME = OplyticSDKRepo;
@@ -376,7 +386,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-OplyticSDKRepo_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-OplyticSDKRepo_Tests/Pods-OplyticSDKRepo_Tests.modulemap";
@@ -448,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -532,7 +542,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/OplyticSDKRepo/OplyticSDKRepo-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/OplyticSDKRepo/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/OplyticSDKRepo/OplyticSDKRepo.modulemap";
 				PRODUCT_MODULE_NAME = OplyticSDKRepo;

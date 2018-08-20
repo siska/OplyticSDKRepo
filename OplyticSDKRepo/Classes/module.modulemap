@@ -1,0 +1,11 @@
+//
+//  module.modulemap
+//  Oplytic
+//
+//  Copyright © 2017 Oplytic. All rights reserved.
+//
+framework module Oplytic {
+    umbrella header "Oplytic.h"
+    export *
+    module * { export * }
+}
