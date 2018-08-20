@@ -1,0 +1,22 @@
+{
+  "name": "OplyticSDKRepo",
+  "version": "0.1.0",
+  "summary": "A short description of OplyticSDKRepo.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/siska/OplyticSDKRepo",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "siska": "rsiska1@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/siska/OplyticSDKRepo.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "OplyticSDKRepo/Classes/**/*"
+}

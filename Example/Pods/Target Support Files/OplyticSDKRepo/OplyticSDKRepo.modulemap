@@ -1,0 +1,6 @@
+framework module OplyticSDKRepo {
+  umbrella header "OplyticSDKRepo-umbrella.h"
+
+  export *
+  module * { export * }
+}

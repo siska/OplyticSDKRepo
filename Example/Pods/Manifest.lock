@@ -1,0 +1,16 @@
+PODS:
+  - OplyticSDKRepo (0.1.0)
+
+DEPENDENCIES:
+  - OplyticSDKRepo (from `../`)
+
+EXTERNAL SOURCES:
+  OplyticSDKRepo:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  OplyticSDKRepo: b4f3aa31da24b9e36fea77d596bbfe2e5868c1ea
+
+PODFILE CHECKSUM: 4e5448d9f14d84b3e0255eec0ea5d6c62e556bb5
+
+COCOAPODS: 1.5.0
