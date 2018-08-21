@@ -27,17 +27,19 @@ let PURCHASE_ACTION_KEY = "Purchase"
 let OPLYTIC_UNIVERSAL_LINK_NOTIFICATION = "oplunivlink"
 
 public protocol OplyticAttributionHandler {
-    func onAttribution(data: [String: String])
+    func onAttribution(clickUrl: String, data: [String: String])
 }
 
 public class Oplytic
 {
+    private static var _hasBeenSetup : Bool = false
     private static var _appLink : String = ""
     private static var _appId : String = ""
     private static var _deviceToken : String = ""
     private static var _clickToken : String = ""
     private static var _cache : OPLDBCache? = nil
-    public static var OplyticAttributionHandler: OplyticAttributionHandler?
+    private static var _deferredClickUrl : String? = nil
+    private static var _oplyticAttributionHandler: OplyticAttributionHandler?
 
     public static func start()
     {
@@ -48,8 +50,24 @@ public class Oplytic
         }
     }
 
+    public static func registerAttributionHandler(oplyticAttributionHandler: OplyticAttributionHandler){
+        _oplyticAttributionHandler = oplyticAttributionHandler
+        if(_deferredClickUrl != nil){
+            attribute(clickUrl: _deferredClickUrl!)
+            _deferredClickUrl = nil
+        }
+    }
+
+    //I think we need to add some logic here to check if we are setup already. We don't want to call this logic twice
+    //If we don't need to. That may be why we are getting duplicate events...
+    //We call setup from
+    //1. Start method
+    //2. Handle Universal Link handler / method
+    //3. Add Event method
     private static func setup()
     {
+        //        if(!_hasBeenSetup){
+        //            _hasBeenSetup = true //ensures only called once
         if(_cache == nil){
             _appLink = ".oplct.com"
             if let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
@@ -147,6 +165,8 @@ public class Oplytic
         serialQueue.sync
             {
                 setup()
+                //This will call tryAttribute again but this is already called in the setup() and addEvent method
+                //Maybe this is why we are getting dupes
                 processUniversalLink(userActivity: userActivity)
         }
     }
@@ -254,18 +274,24 @@ public class Oplytic
                  num1: nil,
                  num2: nil)
 
-        if(OplyticAttributionHandler != nil){
-            var data = [String: String]()
-            let queryItems = URLComponents(string: clickUrl)?.queryItems
-            if(queryItems != nil){
-                for qi in queryItems! {
-                    let paramName = qi.name.lowercased()
-                    let paramValue = qi.value
-                    data[paramName] = paramValue
-                }
-            }
-            OplyticAttributionHandler?.onAttribution(data: data)
+        if(_oplyticAttributionHandler == nil){
+            _deferredClickUrl = clickUrl
+        }else {
+            attribute(clickUrl: clickUrl)
         }
+    }
+
+    private static func attribute(clickUrl: String){
+        var data = [String: String]()
+        let queryItems = URLComponents(string: clickUrl)?.queryItems
+        if(queryItems != nil){
+            for qi in queryItems! {
+                let paramName = qi.name.lowercased()
+                let paramValue = qi.value
+                data[paramName] = paramValue
+            }
+        }
+        _oplyticAttributionHandler?.onAttribution(clickUrl: clickUrl, data: data)
     }
 
     public static func addEvent(eventAction: String? = nil,

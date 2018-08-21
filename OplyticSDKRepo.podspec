@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OplyticSDKRepo'
-  s.version          = '0.1.1'
+  s.version          = '0.2.0'
   s.summary          = 'Oplytic provides precise attribution and reattribution to affiliate partners.'
   s.swift_version    = '4.1'
 
